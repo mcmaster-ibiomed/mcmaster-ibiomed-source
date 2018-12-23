@@ -1,0 +1,21 @@
+<div class="mdc-card" style="position: relative; margin: 1vh; height: 60vh; width: 30vh">
+    <div class="mdc-card__media">
+        <img src="{{card_param[4]}}" alt="" class="center" style="max-height: auto; max-width: 100%; object-fit: contain; object-position: top">
+    </div>
+    <div class="mdc-card__primary" style="margin: 1vh">
+        <h2 class="demo-card__title" style="font-size: 1.5rem">{{card_param[0]}}</h2>
+        <h3 class="demo-card__subtitle" style="font-size: 1rem">{{card_param[1]}}</h3>
+    </div>
+    <div class="mdc-card__secondary" style="margin: 1vh; margin-top: 0; font-size: 1rem">
+        {{card_param[2]}}
+    </div>
+    <div class="mdc-card__actions" style="position: absolute; bottom: 0; right: 0">
+        <div class="mdc-card__action-icons">
+            <a href="mailto:{{card_param[3]}}">
+                <material-button icon>
+                    <material-icon icon="mail_outline"></material-icon>
+                </material-button>
+            </a>
+        </div>
+    </div>
+</div>

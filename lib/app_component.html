@@ -1,0 +1,60 @@
+<material-drawer temporary #drawer="drawer">
+    <div *deferredContent>
+        <div group class="mat-drawer-spacer"></div>
+        <div group>
+            <!-- <div label>Tags</div> -->
+            <nav *ngFor="let heading of headings" class="material-navigation">
+                <a href="#{{heading}}">
+                    <material-button class="material-drawer-button">
+                        {{heading}}
+                    </material-button>
+                </a>
+            </nav>
+        </div>
+    </div>
+</material-drawer>
+<material-content>
+    <article>
+        <header class="material-header outline">
+            <div class="material-header-row">
+                <material-button class="material-drawer-button" icon (trigger)="drawer.toggle()">
+                    <material-icon icon="menu" id="menu-icon"></material-icon>
+                </material-button>
+                <span class="material-header-title">{{title}}</span>
+            </div>
+        </header>
+        <section>
+            <img src="img/banner.svg" alt="" class="center">
+        </section>
+        <section>
+            <h1 id="{{headings[0]}}">{{headings[0]}}</h1>
+            <h2>{{content[0][0]}}</h2>
+            <p>{{content[0][1]}}</p>
+            <img src="img/group-pic.jpg" alt="" style="min-height: 25vh; object-fit: contain">
+            <h2>{{content[0][2]}}</h2>
+            <p>{{content[0][3]}}</p>
+            <h2>{{content[0][4]}}</h2>
+            <p>{{content[0][5]}}</p>
+        </section>
+        <section>
+            <h1 id="{{headings[1]}}">{{headings[1]}}</h1>
+            <div class="horizontal-scroll" style="flex-grow: 1; display: flex; flex-flow: row nowrap; align-items: center">
+                <div *ngFor="let card_param of card_params">
+                    <card @deferred id="{{card_param[0]}}" [card_param]="card_param"></card>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1 id="{{headings[2]}}">{{headings[2]}}</h1>
+        </section>
+        <section>
+            <h1 id="{{headings[3]}}">{{headings[3]}}</h1>
+        </section>
+        <section>
+            <h1 id="{{headings[4]}}">{{headings[4]}}</h1>
+        </section>
+        <section>
+            <h1 id="{{headings[5]}}">{{headings[5]}}</h1>
+        </section>
+    </article>
+</material-content>
